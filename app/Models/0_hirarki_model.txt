@@ -1,0 +1,7 @@
+app/
+├── Models/
+│   ├── Book.php          # Model untuk buku
+│   ├── Member.php        # Model untuk anggota
+│   ├── Borrowing.php     # Model untuk peminjaman
+│   ├── Report.php        # Model untuk laporan
+│   └── User.php          # Model untuk pengguna (autentikasi & role)

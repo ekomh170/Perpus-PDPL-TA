@@ -1,0 +1,14 @@
+# Admin Controllers
+php artisan make:controller Admin/DashboardController
+php artisan make:controller Admin/BookController --resource
+php artisan make:controller Admin/MemberController --resource
+php artisan make:controller Admin/BorrowingController --resource
+php artisan make:controller Admin/ReportController
+
+# Member Controllers
+php artisan make:controller Member/DashboardController
+php artisan make:controller Member/BookController
+php artisan make:controller Member/HistoryController
+
+# Landing Page Controller
+php artisan make:controller LandingController

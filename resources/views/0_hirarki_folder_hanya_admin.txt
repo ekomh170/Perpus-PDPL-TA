@@ -1,0 +1,53 @@
+resources/views/
+├── layouts/                        # Template utama
+│   ├── app.blade.php               # Layout utama (Breeze default)
+│   ├── adminlte.blade.php          # Layout khusus AdminLTE
+│
+├── components/                     # Komponen reusable
+│   ├── adminlte/                   # Komponen AdminLTE
+│   │   ├── navbar.blade.php        # Navbar
+│   │   ├── sidebar.blade.php       # Sidebar
+│   │   ├── footer.blade.php        # Footer
+│   │   └── control.blade.php       # Control sidebar (opsional)
+│
+├── auth/                           # Views untuk autentikasi
+│   ├── login.blade.php             # Halaman login
+│   ├── register.blade.php          # Halaman registrasi
+│   ├── forgot-password.blade.php   # Halaman reset password
+│   └── verify-email.blade.php      # Halaman verifikasi email
+│
+├── admin/                          # Views khusus Admin
+│   ├── dashboard.blade.php         # Dashboard admin
+│   ├── books/                      # Manajemen Buku CRUD
+│   │   ├── index.blade.php         # List buku
+│   │   ├── create.blade.php        # Tambah buku
+│   │   ├── edit.blade.php          # Edit buku
+│   │   └── show.blade.php          # Detail buku
+│   │
+│   ├── members/                    # Manajemen Anggota CRUD
+│   │   ├── index.blade.php         # List anggota
+│   │   ├── create.blade.php        # Tambah anggota
+│   │   ├── edit.blade.php          # Edit anggota
+│   │   └── show.blade.php          # Detail anggota
+│   │
+│   ├── borrowings/                 # Peminjaman buku
+│   │   ├── index.blade.php         # List peminjaman
+│   │   ├── create.blade.php        # Tambah peminjaman
+│   │   └── history.blade.php       # Riwayat peminjaman
+│   │
+│   └── reports/                    # Laporan atau riwayat
+│       ├── borrowing-history.blade.php # Laporan peminjaman
+│
+├── member/                         # Views khusus Member
+│   ├── dashboard.blade.php         # Dashboard member
+│   ├── books/                      # Pencarian buku
+│   │   ├── index.blade.php         # Cari buku
+│   │   └── show.blade.php          # Detail buku
+│   │
+│   ├── history/                    # Riwayat peminjaman
+│       └── index.blade.php         # Riwayat peminjaman
+│
+└── partials/                       # Partial views (bagian kecil halaman)
+    ├── content-header.blade.php    # Header halaman (breadcrumb)
+    ├── alert.blade.php             # Komponen notifikasi
+    └── pagination.blade.php        # Partial untuk pagination
