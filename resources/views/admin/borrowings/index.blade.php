@@ -7,7 +7,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <a href="#" class="btn btn-primary float-right">Tambah Peminjaman</a>
+        <a href="{{ route('admin.borrowings.create') }}" class="btn btn-primary float-right">Tambah Peminjaman</a>
     </div>
     <div class="card-body">
         <table class="table table-bordered">
