@@ -1,13 +1,13 @@
 @extends('layouts.landing')
 
-@section('title', 'Features')
+@section('title', 'Fitur Kami')
 
 @section('content')
     <section class="features-banner">
         <div class="container py-5 text-center">
-            <h1>Our Features</h1>
+            <h1>Fitur Unggulan</h1>
             <p class="text-muted">
-                Discover the amazing features that make Bookly your go-to platform for all things books.
+                Temukan berbagai fitur yang memudahkan akses informasi dan layanan perpustakaan kampus kami.
             </p>
         </div>
     </section>
@@ -17,52 +17,52 @@
             <div class="row">
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-delivery.png') }}" alt="Fast Delivery" class="img-fluid mb-3"
+                        <img src="{{ asset('landing/images/fitur1.png') }}" alt="Pencarian Buku" class="img-fluid mb-3"
                             style="width: 80px;">
-                        <h5>Fast Delivery</h5>
-                        <p>Get your books delivered quickly and reliably right to your doorstep.</p>
+                        <h5>Pencarian Buku</h5>
+                        <p>Cari koleksi buku yang Anda butuhkan dengan mudah melalui sistem pencarian kami.</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-quality.png') }}" alt="High Quality" class="img-fluid mb-3"
+                        <img src="{{ asset('landing/images/fitur2.png') }}" alt="Manajemen Peminjaman" class="img-fluid mb-3"
                             style="width: 80px;">
-                        <h5>High Quality</h5>
-                        <p>We ensure the best quality books to enhance your reading experience.</p>
+                        <h5>Manajemen Peminjaman</h5>
+                        <p>Pinjam dan kelola buku yang Anda butuhkan langsung dari platform kami.</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-variety.png') }}" alt="Wide Variety" class="img-fluid mb-3"
+                        <img src="{{ asset('landing/images/fitur3.png') }}" alt="Riwayat Peminjaman" class="img-fluid mb-3"
                             style="width: 80px;">
-                        <h5>Wide Variety</h5>
-                        <p>Explore a vast collection of books across multiple genres and categories.</p>
+                        <h5>Riwayat Peminjaman</h5>
+                        <p>Cek riwayat peminjaman Anda dan pantau buku yang sedang dipinjam dengan mudah.</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-secure.png') }}" alt="Secure Payment" class="img-fluid mb-3"
+                        <img src="{{ asset('landing/images/fitur4.png') }}" alt="Autentikasi Aman" class="img-fluid mb-3"
                             style="width: 80px;">
-                        <h5>Secure Payment</h5>
-                        <p>Enjoy safe and secure payment options for a worry-free shopping experience.</p>
+                        <h5>Autentikasi Aman</h5>
+                        <p>Akses sistem perpustakaan dengan keamanan yang terjamin untuk admin dan anggota.</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-support.png') }}" alt="24/7 Support" class="img-fluid mb-3"
+                        <img src="{{ asset('landing/images/fitur6.png') }}" alt="Role Khusus" class="img-fluid mb-3"
                             style="width: 80px;">
-                        <h5>24/7 Support</h5>
-                        <p>Our team is available around the clock to assist you with any queries.</p>
+                        <h5>Role Khusus</h5>
+                        <p>Admin dan anggota memiliki akses yang sesuai dengan kebutuhan masing-masing.</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
                     <div class="feature-item p-4 border rounded">
-                        <img src="{{ asset('images/feature-community.png') }}" alt="Reading Community"
+                        <img src="{{ asset('landing/images/fitur7.png') }}" alt="Dukungan Teknologi"
                             class="img-fluid mb-3" style="width: 80px;">
-                        <h5>Reading Community</h5>
-                        <p>Join a vibrant community of readers and share your love for books.</p>
+                        <h5>Dukungan Teknologi</h5>
+                        <p>Platform modern yang dirancang untuk mendukung proses belajar dan membaca Anda.</p>
                     </div>
                 </div>
             </div>
@@ -71,9 +71,9 @@
 
     <section class="cta-section py-5 bg-light">
         <div class="container text-center">
-            <h2>Experience the Best Features with Bookly</h2>
-            <p class="text-muted">Start your journey today and explore the endless possibilities with Bookly.</p>
-            <a href="{{ route('landing.index') }}" class="btn btn-primary">Learn More</a>
+            <h2>Manfaatkan Fitur Terbaik Kami</h2>
+            <p class="">Tingkatkan pengalaman membaca dan belajar Anda dengan fitur-fitur unggulan dari perpustakaan kami.</p>
+            <a href="{{ route('landing.index') }}" class="btn btn-primary">Pelajari Lebih Lanjut</a>
         </div>
     </section>
 @endsection
