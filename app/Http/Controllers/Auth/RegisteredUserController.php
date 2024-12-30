@@ -60,6 +60,6 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         // Mengarahkan pengguna ke dashboard setelah login berhasil
-        return redirect()->route('dashboard');
+        return redirect()->route('member.dashboard');
     }
 }
