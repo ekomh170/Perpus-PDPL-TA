@@ -9,8 +9,8 @@
                         </svg>
                     </div>
                     <div class="icon-box-content">
-                        <h4 class="card-title mb-1 text-capitalize text-dark">Free delivery</h4>
-                        <p>Consectetur adipi elit lorem ipsum dolor sit amet.</p>
+                        <h4 class="card-title mb-1 text-capitalize text-dark">Pinjaman Online</h4>
+                        <p>Ajukan pinjaman buku secara online dan ambil di perpustakaan. Hemat waktu dan lebih praktis.</p>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@
                         </svg>
                     </div>
                     <div class="icon-box-content">
-                        <h4 class="card-title mb-1 text-capitalize text-dark">Quality guarantee</h4>
-                        <p>Dolor sit amet orem ipsu mcons ectetur adipi elit.</p>
+                        <h4 class="card-title mb-1 text-capitalize text-dark">Layanan Antar Buku</h4>
+                        <p>Pesan buku secara online dan ambil langsung di titik pengantaran kampus.</p>
                     </div>
                 </div>
             </div>
@@ -35,8 +35,8 @@
                         </svg>
                     </div>
                     <div class="icon-box-content">
-                        <h4 class="card-title mb-1 text-capitalize text-dark">Daily offers</h4>
-                        <p>Amet consectetur adipi elit loreme ipsum dolor sit.</p>
+                        <h4 class="card-title mb-1 text-capitalize text-dark">Reservasi Buku</h4>
+                        <p>Pesan buku yang sedang dipinjam dan dapatkan notifikasi saat tersedia.</p>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
                         </svg>
                     </div>
                     <div class="icon-box-content">
-                        <h4 class="card-title mb-1 text-capitalize text-dark">100% secure payment</h4>
-                        <p>Rem Lopsum dolor sit amet, consectetur adipi elit.</p>
+                        <h4 class="card-title mb-1 text-capitalize text-dark">Keamanan Data Terjamin</h4>
+                        <p>Data dan privasi pengguna terjaga dengan sistem keamanan perpustakaan yang terenkripsi.</p>
                     </div>
                 </div>
             </div>

@@ -1,54 +1,45 @@
 <section id="latest-posts" class="padding-large">
     <div class="container">
         <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-            <h3 class="d-flex align-items-center">Latest posts</h3>
-            <a href="{{ route('landing.index') }}" class="btn">View All</a>
+            <h3 class="d-flex align-items-center">Kabar Terbaru dari Perpustakaan NF</h3>
+            <a href="{{ route('landing.index') }}" class="btn">Lihat Semua</a>
         </div>
         <div class="row">
             <div class="col-md-3 posts mb-4">
                 <img src="{{ asset('landing/images/post-item1.jpg') }}" alt="post image" class="img-fluid rounded-3">
-                <a href="blog.html" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="{{ route('landing.index') }}">10
-                        Must-Read Books of the Year: Our Top Picks!</a>
+                <a href="blog.html" class="fs-6 text-primary">Tugas Akhir</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark">
+                    <a href="{{ route('landing.index') }}">Panduan Lengkap Penyusunan Tugas Akhir 2024</a>
                 </h4>
-                <p class="mb-2">Dive into the world of cutting-edge technology with our latest blog post, where
-                    we highlight
-                    five essential gadge. <span><a class="text-decoration-underline text-black-50"
-                            href="{{ route('landing.index') }}">Read More</a></span>
-                </p>
+                <p class="mb-2">Dapatkan tips dan trik terbaru untuk menyelesaikan tugas akhir tepat waktu dan sesuai pedoman akademik. <span>
+                    <a class="text-decoration-underline text-black-50" href="{{ route('landing.index') }}">Baca Selengkapnya</a></span></p>
             </div>
             <div class="col-md-3 posts mb-4">
                 <img src="{{ asset('landing/images/post-item2.jpg') }}" alt="post image" class="img-fluid rounded-3">
-                <a href="blog.html" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="{{ route('landing.index') }}">The
-                        Fascinating Realm of Science Fiction</a></h4>
-                <p class="mb-2">Explore the intersection of technology and sustainability in our latest blog
-                    post. Learn about
-                    the innovative <span><a class="text-decoration-underline text-black-50"
-                            href="{{ route('landing.index') }}">Read More</a></span> </p>
+                <a href="blog.html" class="fs-6 text-primary">Berita Perpustakaan</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark">
+                    <a href="{{ route('landing.index') }}">Perpustakaan NF Kini Buka Layanan 24 Jam!</a>
+                </h4>
+                <p class="mb-2">Nikmati akses perpustakaan kapan saja untuk membantu menyelesaikan tugas dan riset Anda. <span>
+                    <a class="text-decoration-underline text-black-50" href="{{ route('landing.index') }}">Baca Selengkapnya</a></span></p>
             </div>
             <div class="col-md-3 posts mb-4">
-                <img src="{{ asset('landing/images/post-item3') }}.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="blog.html" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="{{ route('landing.index') }}">Finding
-                        Love in the Pages of a Book</a></h4>
-                <p class="mb-2">Stay ahead of the curve with our insightful look into the rapidly evolving
-                    landscape of
-                    wearable technology. <span><a class="text-decoration-underline text-black-50"
-                            href="{{ route('landing.index') }}">Read More</a></span>
-                </p>
+                <img src="{{ asset('landing/images/post-item3.jpg') }}" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Tugas Akhir</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark">
+                    <a href="{{ route('landing.index') }}">Referensi Terbaik untuk Tugas Akhir Mahasiswa TI</a>
+                </h4>
+                <p class="mb-2">Jelajahi koleksi buku dan jurnal terbaru yang mendukung penelitian dan tugas akhir Anda. <span>
+                    <a class="text-decoration-underline text-black-50" href="{{ route('landing.index') }}">Baca Selengkapnya</a></span></p>
             </div>
             <div class="col-md-3 posts mb-4">
-                <img src="{{ asset('landing/images/post-item4') }}.jpg" alt="post image" class="img-fluid rounded-3">
-                <a href="blog.html" class="fs-6 text-primary">Books</a>
-                <h4 class="card-title mb-2 text-capitalize text-dark"><a href="{{ route('landing.index') }}">Reading
-                        for Mental Health: How Books Can Heal and
-                        Inspire</a></h4>
-                <p class="mb-2">In today's remote work environment, productivity is key. Discover the top apps
-                    and tools that
-                    can help you stay <span><a class="text-decoration-underline text-black-50"
-                            href="{{ route('landing.index') }}">Read More</a></span>
-                </p>
+                <img src="{{ asset('landing/images/post-item4.jpg') }}" alt="post image" class="img-fluid rounded-3">
+                <a href="blog.html" class="fs-6 text-primary">Berita Perpustakaan</a>
+                <h4 class="card-title mb-2 text-capitalize text-dark">
+                    <a href="{{ route('landing.index') }}">Workshop Penulisan Tugas Akhir: Daftar Sekarang!</a>
+                </h4>
+                <p class="mb-2">Ikuti workshop intensif yang membantu Anda menyusun tugas akhir dengan lebih mudah dan efektif. <span>
+                    <a class="text-decoration-underline text-black-50" href="{{ route('landing.index') }}">Baca Selengkapnya</a></span></p>
             </div>
         </div>
     </div>

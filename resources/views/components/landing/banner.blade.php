@@ -26,15 +26,15 @@
                         <!-- Banner Content -->
                         <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                             <div class="banner-content">
-                                <h2>The Fine Print Book Collection</h2>
-                                <p>Best Offer Save 30%. Grab it now!</p>
-                                <a href="{{ route('landing.index') }}" class="btn mt-3">Shop Collection</a>
+                                <h2>Menyalakan Cahaya Pengetahuan</h2>
+                                <p>Temukan koleksi buku terbaru dan literatur akademik yang akan membimbing Anda menuju pencerahan ilmu. Akses mudah, kapan saja.</p>
+                                <a href="{{ route('landing.index') }}" class="btn mt-3">Jelajahi koleksi</a>
                             </div>
                         </div>
                         <!-- Banner Image -->
                         <div class="col-md-6 text-center">
                             <div class="image-holder">
-                                <img src="{{ asset('landing/images/banner-image2.png') }}" class="img-fluid"
+                                <img src="{{ asset('landing/images/banner-image1.png') }}" class="img-fluid"
                                     alt="banner">
                             </div>
                         </div>
@@ -49,15 +49,15 @@
                         <!-- Banner Content -->
                         <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                             <div class="banner-content">
-                                <h2>How Innovation Works</h2>
-                                <p>Discount available. Grab it now!</p>
-                                <a href="{{ route('landing.index') }}" class="btn mt-3">Shop Product</a>
+                                <h2>Perpustakaan Digital, Jendela Masa Depan</h2>
+                                <p>Buka pintu menuju dunia digital dengan akses jurnal, e-book, dan penelitian dari berbagai disiplin ilmu. Semua dalam genggaman Anda.</p>
+                                <a href="{{ route('landing.index') }}" class="btn mt-3">Mulai Membaca!</a>
                             </div>
                         </div>
                         <!-- Banner Image -->
                         <div class="col-md-6 text-center">
                             <div class="image-holder">
-                                <img src="{{ asset('landing/images/banner-image1.png') }}" class="img-fluid"
+                                <img src="{{ asset('landing/images/banner-image2.png') }}" class="img-fluid"
                                     alt="banner">
                             </div>
                         </div>
@@ -72,9 +72,9 @@
                         <!-- Banner Content -->
                         <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                             <div class="banner-content">
-                                <h2>Your Heart is the Sea</h2>
-                                <p>Limited stocks available. Grab it now!</p>
-                                <a href="{{ route('landing.index') }}" class="btn mt-3">Shop Collection</a>
+                                <h2>Ruang Belajar, Inspirasi Tanpa Batas</h2>
+                                <p>Nikmati suasana belajar yang nyaman dan tenang di perpustakaan kami. Bersama, kita tumbuh dan berkembang!</p>
+                                <a href="{{ route('landing.index') }}" class="btn mt-3">Kunjungi Perpustakaan</a>
                             </div>
                         </div>
                         <!-- Banner Image -->
@@ -95,9 +95,9 @@
                         <!-- Banner Content -->
                         <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
                             <div class="banner-content">
-                                <h2>Explore the Unknown</h2>
-                                <p>Discover our new arrivals with 20% off!</p>
-                                <a href="{{ route('landing.index') }}" class="btn mt-3">Explore Now</a>
+                                <h2>Kolaborasi dan Inovasi dalam Setiap Halaman</h2>
+                                <p>Perpustakaan kami bukan hanya tempat membaca, tapi ruang untuk berkolaborasi, berdiskusi, dan menciptakan ide-ide besar. Mari bersama ciptakan masa depan yang gemilang.</p>
+                                <a href="{{ route('landing.index') }}" class="btn mt-3">Temukan Inspiras</a>
                             </div>
                         </div>
                         <!-- Banner Image -->

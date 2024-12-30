@@ -60,11 +60,11 @@ CSS STRUCTURE:
   --gray-color-500:           #D0D0D0;
   --gray-color-800:           #3A3A3A;
   --light-gray-color:         #D2D2D2;
-  --primary-color:            #F86D72;
+  --primary-color:            #007BFF;
   --bs-body-color:            #272727;
   --bs-secondary-color:       #FFE8F0;
   --bs-secondary-rgb:         255, 232, 240;
-  --bs-primary-rgb:           248,109,114;
+  --bs-primary-rgb:           0,123,255;
   --bs-border-color:          #E3E3E3;
   --bs-dropdown-link-active-bg: #F5F5F5;
   --light-color:              #F8F8F8;

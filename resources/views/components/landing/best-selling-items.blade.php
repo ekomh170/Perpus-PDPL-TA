@@ -1,7 +1,7 @@
 <section id="best-selling-items" class="position-relative padding-large ">
     <div class="container">
         <div class="section-title d-md-flex justify-content-between align-items-center mb-4">
-            <h3 class="d-flex align-items-center">Best selling items</h3>
+            <h3 class="d-flex align-items-center">Buku Populer di Perpustakaan Nurul Fikri</h3>
             <a href="{{ route('landing.index') }}" class="btn">View All</a>
         </div>
         <div class="position-absolute top-50 end-0 pe-0 pe-xxl-5 me-0 me-xxl-5 swiper-next product-slider-button-next">
@@ -49,7 +49,9 @@
                                 </svg>
                             </div>
                         </div>
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">
@@ -95,7 +97,9 @@
                             </div>
                         </div>
 
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">
@@ -141,7 +145,9 @@
                             </div>
                         </div>
 
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">
@@ -190,7 +196,9 @@
                             </div>
                         </div>
 
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">
@@ -236,7 +244,9 @@
                             </div>
                         </div>
 
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">
@@ -282,7 +292,9 @@
                             </div>
                         </div>
 
-                        <span class="price text-primary fw-bold mb-2 fs-5">$870</span>
+                        <div class="text-center mt-3">
+                            <a href="#" class="btn btn-primary w-100">Pinjam</a>
+                        </div>
                         <div class="card-concern position-absolute start-0 end-0 d-flex gap-2">
                             <button type="button" href="#" class="btn btn-dark" data-bs-toggle="tooltip"
                                 data-bs-placement="top" data-bs-title="Tooltip on top">

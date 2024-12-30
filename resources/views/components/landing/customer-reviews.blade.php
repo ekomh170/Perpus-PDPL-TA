@@ -14,15 +14,14 @@
             </svg>
         </div>
         <div class="section-title mb-4 text-center">
-            <h3 class="mb-4">Customers reviews</h3>
+            <h3 class="mb-4">Ulasan Pengunjung</h3>
         </div>
-        <div class="swiper testimonial-swiper ">
+        <div class="swiper testimonial-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="card position-relative text-left p-5 border rounded-3">
-                        <blockquote>"I stumbled upon this bookstore while visiting the city, and it instantly became
-                            my favorite spot. The cozy atmosphere, friendly staff, and wide selection of books make
-                            every visit a delight!"</blockquote>
+                        <blockquote>"Perpustakaan ini sangat nyaman! Koleksi bukunya sangat lengkap, dari novel hingga
+                            buku akademik. Tempat ini menjadi tempat favorit saya untuk belajar dan mencari inspirasi."</blockquote>
                         <div class="rating text-warning d-flex align-items-center">
                             <svg class="star star-fill">
                                 <use xlink:href="#star-fill"></use>
@@ -40,14 +39,14 @@
                                 <use xlink:href="#star-fill"></use>
                             </svg>
                         </div>
-                        <h5 class="mt-1 fw-normal">Emma Chamberlin</h5>
+                        <h5 class="mt-1 fw-normal">Rizky Maulana</h5>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="card position-relative text-left p-5 border rounded-3">
-                        <blockquote>"As an avid reader, I'm always on the lookout for new releases, and this
-                            bookstore never disappoints. They always have the latest titles, and their
-                            recommendations have introduced me to some incredible reads!"</blockquote>
+                        <blockquote>"Saya sangat terbantu dengan fasilitas perpustakaan ini. Sistem pencarian bukunya
+                            memudahkan saya untuk menemukan referensi akademik. Pelayanan stafnya juga ramah dan
+                            profesional."</blockquote>
                         <div class="rating text-warning d-flex align-items-center">
                             <svg class="star star-fill">
                                 <use xlink:href="#star-fill"></use>
@@ -65,14 +64,13 @@
                                 <use xlink:href="#star-fill"></use>
                             </svg>
                         </div>
-                        <h5 class="mt-1 fw-normal">Thomas John</h5>
+                        <h5 class="mt-1 fw-normal">Aulia Rahman</h5>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="card position-relative text-left p-5 border rounded-3">
-                        <blockquote>"I ordered a few books online from this store, and I was impressed by the quick
-                            delivery and careful packaging. It's clear that they prioritize customer satisfaction,
-                            and I'll definitely be shopping here again!"</blockquote>
+                        <blockquote>"Saya sangat menyukai suasana di perpustakaan ini. Tempat yang tenang dan nyaman
+                            untuk membaca buku atau mengerjakan tugas. Sangat cocok untuk mahasiswa seperti saya!"</blockquote>
                         <div class="rating text-warning d-flex align-items-center">
                             <svg class="star star-fill">
                                 <use xlink:href="#star-fill"></use>
@@ -90,16 +88,13 @@
                                 <use xlink:href="#star-fill"></use>
                             </svg>
                         </div>
-                        <h5 class="mt-1 fw-normal">Kevin Bryan</h5>
+                        <h5 class="mt-1 fw-normal">Dina Salsabila</h5>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="card position-relative text-left p-5 border rounded-3">
-                        <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I
-                            couldn't be happier
-                            with my experience! The staff was incredibly knowledgeable and guided me through the
-                            process of choosing
-                            the perfect device for my needs. Highly recommended!”</blockquote>
+                        <blockquote>"Layanan peminjaman online di perpustakaan ini sangat praktis. Buku saya diantar
+                            dengan cepat, dan saya dapat melacak riwayat peminjaman saya dengan mudah melalui aplikasi."</blockquote>
                         <div class="rating text-warning d-flex align-items-center">
                             <svg class="star star-fill">
                                 <use xlink:href="#star-fill"></use>
@@ -117,34 +112,7 @@
                                 <use xlink:href="#star-fill"></use>
                             </svg>
                         </div>
-                        <h5 class="mt-1 fw-normal">Stevin</h5>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="card position-relative text-left p-5 border rounded-3">
-                        <blockquote>“I stumbled upon this tech store while searching for a new laptop, and I
-                            couldn't be happier
-                            with my experience! The staff was incredibly knowledgeable and guided me through the
-                            process of choosing
-                            the perfect device for my needs. Highly recommended!”</blockquote>
-                        <div class="rating text-warning d-flex align-items-center">
-                            <svg class="star star-fill">
-                                <use xlink:href="#star-fill"></use>
-                            </svg>
-                            <svg class="star star-fill">
-                                <use xlink:href="#star-fill"></use>
-                            </svg>
-                            <svg class="star star-fill">
-                                <use xlink:href="#star-fill"></use>
-                            </svg>
-                            <svg class="star star-fill">
-                                <use xlink:href="#star-fill"></use>
-                            </svg>
-                            <svg class="star star-fill">
-                                <use xlink:href="#star-fill"></use>
-                            </svg>
-                        </div>
-                        <h5 class="mt-1 fw-normal">Roman</h5>
+                        <h5 class="mt-1 fw-normal">Fauzan Pratama</h5>
                     </div>
                 </div>
             </div>
