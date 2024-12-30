@@ -23,8 +23,8 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $borrowing->book->title ?? '-' }}</td>
-                    <td>{{ $borrowing->borrow_date ?? '-' }}</td>
-                    <td>{{ $borrowing->return_date ?? '-' }}</td>
+                    <td>{{ $borrowing->tanggal_peminjaman ?? '-' }}</td>
+                    <td>{{ $borrowing->tanggal_pengembalian ?? '-' }}</td>
                     <td>
                         @if ($borrowing->status == 'returned')
                             <span class="badge badge-success">Dikembalikan</span>
