@@ -2,40 +2,99 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Book;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BookController extends Controller
 {
+    /**
+     * Menampilkan daftar buku (Read).
+     */
     public function index()
     {
-        // Menampilkan daftar buku
-        return view('admin.books.index');
+        $bookInstance = Book::getInstance();
+        $books = $bookInstance->all();
+
+        return view('admin.books.index', compact('books'));
     }
 
+    /**
+     * Menampilkan form untuk menambahkan buku baru (Create).
+     */
     public function create()
     {
-        // Menampilkan form tambah buku
         return view('admin.books.create');
     }
 
-    public function store()
+    /**
+     * Menyimpan buku baru ke database.
+     */
+    public function store(Request $request)
     {
-        // Menyimpan data buku ke database (logika di sini)
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'penulis' => 'required|string|max:255',
+            'kategori' => 'nullable|string|max:100',
+            'stok' => 'required|integer|min:0',
+        ]);
+
+        $bookInstance = Book::getInstance();
+        $bookInstance->create($request->all());
+
+        return redirect()->route('books.index')->with('success', 'Book added successfully!');
     }
 
+    /**
+     * Menampilkan detail buku (Show).
+     */
+    public function show($id)
+    {
+        $bookInstance = Book::getInstance();
+        $book = $bookInstance->findOrFail($id);
+
+        return view('admin.books.show', compact('book'));
+    }
+
+    /**
+     * Menampilkan form untuk mengedit buku.
+     */
     public function edit($id)
     {
-        // Menampilkan form edit buku
-        return view('admin.books.edit', compact('id'));
+        $bookInstance = Book::getInstance();
+        $book = $bookInstance->findOrFail($id);
+
+        return view('admin.books.edit', compact('book'));
     }
 
-    public function update($id)
+    /**
+     * Mengupdate buku yang sudah ada di database.
+     */
+    public function update(Request $request, $id)
     {
-        // Update data buku (logika di sini)
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'penulis' => 'required|string|max:255',
+            'kategori' => 'nullable|string|max:100',
+            'stok' => 'required|integer|min:0',
+        ]);
+
+        $bookInstance = Book::getInstance();
+        $book = $bookInstance->findOrFail($id);
+        $book->update($request->all());
+
+        return redirect()->route('books.index')->with('success', 'Book updated successfully!');
     }
 
+    /**
+     * Menghapus buku dari database.
+     */
     public function destroy($id)
     {
-        // Hapus data buku (logika di sini)
+        $bookInstance = Book::getInstance();
+        $book = $bookInstance->findOrFail($id);
+        $book->delete();
+
+        return redirect()->route('books.index')->with('success', 'Book deleted successfully!');
     }
 }
