@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul');
             $table->string('penulis');
             $table->string('kategori', 100)->nullable();
-            $table->integer('stok')->default(0); 
+            $table->integer('stok')->default(0);
             $table->timestamps();
         });
 

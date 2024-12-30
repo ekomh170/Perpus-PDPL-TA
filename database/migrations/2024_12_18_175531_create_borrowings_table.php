@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('borrowings', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('member_id');
-            $table->Foreign('member_id')->references('id')->on('members')->onDelete('cascade');
+            $table->foreign('member_id')->references('id')->on('members')->onDelete('cascade');  // Relasi ke members
             $table->unsignedBigInteger('book_id');
-            $table->Foreign('book_id')->references('id')->on('books')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');  // Relasi ke books
             $table->date('tanggal_peminjaman');
-            $table->date('tanggal_pengembalian')->default(null);
+            $table->date('tanggal_pengembalian')->nullable();
             $table->enum('status', ['peminjaman', 'pengembalian'])->default('peminjaman');
             $table->decimal('denda', 10, 2)->default(0.00);
             $table->timestamps();
