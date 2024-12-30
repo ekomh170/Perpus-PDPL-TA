@@ -31,7 +31,7 @@ Route::get('/test', function () {
 
 // Admin Routes
 Route::prefix('admin')
-    // ->middleware(['auth', 'role:admin']) // Middleware dikomentari untuk sementara
+    ->middleware(['auth', 'role:admin']) // Middleware dikomentari untuk sementara
     ->group(function () {
         Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
@@ -72,7 +72,7 @@ Route::prefix('admin')
 
 // Member Routes
 Route::prefix('member')
-    // ->middleware(['auth', 'role:member']) // Middleware dikomentari untuk sementara
+    ->middleware(['auth', 'role:member']) // Middleware dikomentari untuk sementara
     ->group(function () {
         Route::get('/dashboard', [MemberDashboardController::class, 'index'])->name('member.dashboard');
 
@@ -87,7 +87,7 @@ Route::prefix('member')
     });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    // return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
