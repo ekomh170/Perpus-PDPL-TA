@@ -111,29 +111,6 @@
                 </div>
             </div>
 
-            <!-- Slide 5 -->
-            <div class="swiper-slide">
-                <div class="container">
-                    <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
-                        <!-- Banner Content -->
-                        <div class="col-md-5 offset-md-1 mt-5 mt-md-0 text-center text-md-start">
-                            <div class="banner-content">
-                                <h2>Summer Sale is Here</h2>
-                                <p>Grab your favorites at 50% off before it’s too late!</p>
-                                <a href="{{ route('landing.index') }}" class="btn mt-3">Shop Now</a>
-                            </div>
-                        </div>
-                        <!-- Banner Image -->
-                        <div class="col-md-6 text-center">
-                            <div class="image-holder">
-                                <img src="{{ asset('landing/images/banner-image4.png') }}" class="img-fluid"
-                                    alt="banner">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
