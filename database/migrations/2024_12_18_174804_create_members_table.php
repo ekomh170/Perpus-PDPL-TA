@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email')->unique();
             $table->string('telepon')->nullable();
+            $table->string('alamat')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });

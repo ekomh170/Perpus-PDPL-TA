@@ -16,6 +16,7 @@
                     <th>Tanggal Pinjam</th>
                     <th>Tanggal Kembali</th>
                     <th>Status</th>
+                    <th>Denda</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,11 +24,12 @@
                 @foreach ($borrowings as $borrowing)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $borrowing->member->name ?? '-' }}</td>
-                    <td>{{ $borrowing->book->title ?? '-' }}</td>
-                    <td>{{ $borrowing->borrow_date ?? '-' }}</td>
-                    <td>{{ $borrowing->return_date ?? '-' }}</td>
+                    <td>{{ $borrowing->member->nama ?? '-' }}</td>
+                    <td>{{ $borrowing->book->judul ?? '-' }}</td>
+                    <td>{{ $borrowing->tanggal_peminjaman ?? '-' }}</td>
+                    <td>{{ $borrowing->tanggal_pengembalian ?? '-' }}</td>
                     <td>{{ $borrowing->status ?? '-' }}</td>
+                    <td>{{ $borrowing->denda ?? '-' }}</td>
                 </tr>
                 @endforeach
             </tbody>

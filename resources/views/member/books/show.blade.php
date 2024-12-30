@@ -7,9 +7,9 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <h4><strong>Judul Buku:</strong> {{ $book->title ?? 'N/A' }}</h4>
-        <p><strong>Penulis:</strong> {{ $book->author ?? 'N/A' }}</p>
-        <p><strong>Jumlah Tersedia:</strong> {{ $book->quantity ?? 'N/A' }}</p>
+        <h4><strong>Judul Buku:</strong> {{ $book->judul ?? 'N/A' }}</h4>
+        <p><strong>Penulis:</strong> {{ $book->penulis ?? 'N/A' }}</p>
+        <p><strong>Jumlah Tersedia:</strong> {{ $book->stok ?? 'N/A' }}</p>
         <p><strong>Deskripsi:</strong> {{ $book->description ?? 'N/A' }}</p>
         <a href="{{ route('member.books.index') }}" class="btn btn-secondary">Kembali</a>
     </div>
