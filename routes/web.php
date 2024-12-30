@@ -25,7 +25,9 @@ Route::get('/about', [LandingController::class, 'about'])->name('landing.about')
 Route::get('/features', [LandingController::class, 'features'])->name('landing.features');
 Route::get('/contact', [LandingController::class, 'contact'])->name('landing.contact');
 
-Route::get('/test', function () { return view('welcome'); });
+Route::get('/test', function () {
+    return view('welcome');
+});
 
 // Admin Routes
 Route::prefix('admin')
@@ -84,17 +86,14 @@ Route::prefix('member')
         Route::get('/history', [HistoryController::class, 'index'])->name('member.history.index');
     });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-    Route::middleware('auth')->group(function () {
-        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    });
-
-require __DIR__.'/auth.php';
-
-
+require __DIR__ . '/auth.php';
