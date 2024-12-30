@@ -35,7 +35,6 @@
     <!-- Search Popup -->
     @include('components.landing.search-popup')
 
-
     <!-- Header -->
     <header>
         @include('components.landing.header')
