@@ -23,45 +23,20 @@
                     <ul id="navbar"
                         class="navbar-nav text-uppercase justify-content-start justify-content-lg-center align-items-start align-items-lg-center flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link me-4 active" href="{{ route('landing.index') }}">Home</a>
+                            <a class="nav-link me-4 {{ request()->is('home') ? 'active' : '' }}"
+                                href="{{ route('landing.index') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-4" href="{{ route('landing.about') }}">About</a>
+                            <a class="nav-link me-4 {{ request()->is('about') ? 'active' : '' }}"
+                                href="{{ route('landing.about') }}">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-4" href="{{ route('landing.contact') }}">Contact</a>
+                            <a class="nav-link me-4 {{ request()->is('contact') ? 'active' : '' }}"
+                                href="{{ route('landing.contact') }}">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link me-4" href="{{ route('landing.features') }}">Features</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link me-4 dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                                role="button" aria-expanded="false">Pages</a>
-                            <ul class="dropdown-menu animate slide border">
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">About</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Shop</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Single
-                                        Product</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Cart</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Checkout</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Blog</a>
-                                </li>
-                                <li>
-                                    <a href="{{ route('landing.index') }}" class="dropdown-item fw-light">Single
-                                        Post</a>
-                                </li>
-                            </ul>
+                            <a class="nav-link me-4 {{ request()->is('features') ? 'active' : '' }}"
+                                href="{{ route('landing.features') }}">Features</a>
                         </li>
                     </ul>
                     <div class="user-items d-flex">
@@ -98,8 +73,6 @@
                             </li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
         </div>
