@@ -42,7 +42,7 @@ class BookController extends Controller
         $bookInstance = Book::getInstance();
         $bookInstance->create($request->all());
 
-        return redirect()->route('books.index')->with('success', 'Book added successfully!');
+        return redirect()->route('admin.books.index')->with('success', 'Book added successfully!');
     }
 
     /**
@@ -83,7 +83,7 @@ class BookController extends Controller
         $book = $bookInstance->findOrFail($id);
         $book->update($request->all());
 
-        return redirect()->route('books.index')->with('success', 'Book updated successfully!');
+        return redirect()->route('admin.books.index')->with('success', 'Book updated successfully!');
     }
 
     /**
@@ -95,6 +95,6 @@ class BookController extends Controller
         $book = $bookInstance->findOrFail($id);
         $book->delete();
 
-        return redirect()->route('books.index')->with('success', 'Book deleted successfully!');
+        return redirect()->route('admin.books.index')->with('success', 'Book deleted successfully!');
     }
 }
