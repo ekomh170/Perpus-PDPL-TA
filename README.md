@@ -24,11 +24,11 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengemba
 ## Fitur
 
 ### **Admin**
-- **Dashboard**: Statistik buku, anggota, dan peminjaman.
+- **Dashboard**: Statistik buku & anggota.
 - **Manajemen Buku**: Tambah, ubah, hapus, dan cari buku.
 - **Manajemen Anggota**: Tambah, ubah, hapus, dan kelola status anggota.
 - **Peminjaman Buku**: Kelola proses peminjaman dan pengembalian buku.
-- **Laporan**: Lihat dan ekspor laporan peminjaman buku.
+- **Laporan**: Laporan peminjaman buku.
 
 ### **Member**
 - **Dashboard**: Informasi statistik buku dan peminjaman aktif.
@@ -80,15 +80,3 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengemba
 - **Database**: SQLite
 - **Frontend**: AdminLTE, Bootstrap
 - **Authentication**: Laravel Breeze
-
----
-
-## Kontribusi Untuk Open Source
-
-1. Fork repository ini.
-2. Buat branch untuk fitur atau perbaikan (`git checkout -b fitur-baru`).
-3. Commit perubahan Anda (`git commit -m 'Tambah fitur baru'`).
-4. Push ke branch (`git push origin fitur-baru`).
-5. Buat Pull Request.
-
----
