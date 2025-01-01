@@ -100,6 +100,24 @@ class BorrowingController extends Controller
 
         $borrowing = Borrowing::getInstance()->findOrFail($id);
 
+        // Ambil buku lama yang dipinjam
+        $oldBook = $borrowing->book;
+
+        // Ambil data buku baru
+        $newBook = Book::getInstance()->findOrFail($request->book_id);
+
+        // Jika buku berubah, sesuaikan stok
+        if ($oldBook->id !== $newBook->id) {
+            // Kembalikan stok buku lama
+            $oldBook->increment('stok');
+
+            // Kurangi stok buku baru jika stok mencukupi
+            if ($newBook->stok < 1) {
+                return redirect()->back()->withErrors(['book_id' => 'Stok buku tidak mencukupi.'])->withInput();
+            }
+            $newBook->decrement('stok');
+        }
+
         // Update data peminjaman
         $borrowing->update($request->all());
 
