@@ -50,10 +50,24 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengemba
    ```
 
 3. **Konfigurasi Database**
+   - Gunakan SQLite sebagai database:
+     ```bash
+     touch database/database.sqlite
+     ```
+   - Salin file `.env.example` menjadi `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Konfigurasikan database pada file `.env`:
+     ```env
+     DB_CONNECTION=sqlite
+     DB_DATABASE=/path/to/your/project/database/database.sqlite
+     ```
 
 4. **Migrate dan Seed Database**
    ```bash
-   php artisan migrate --seed
+   php artisan migrate:fresh
+   php artisan db:seed
    ```
 
 5. **Jalankan Aplikasi**
