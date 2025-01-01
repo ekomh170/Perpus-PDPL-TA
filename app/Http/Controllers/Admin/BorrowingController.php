@@ -138,8 +138,13 @@ class BorrowingController extends Controller
         return redirect()->route('admin.borrowings.index')->with('success', 'Peminjaman berhasil dihapus!');
     }
 
-    public function markAsReturned($id)
+    public function markAsReturned(Request $request, $id)
     {
+        // Validasi input denda
+        $request->validate([
+            'denda' => 'nullable|numeric|min:0',
+        ]);
+
         // Ambil data peminjaman berdasarkan ID
         $borrowing = Borrowing::getInstance()->with('book')->findOrFail($id);
 
@@ -149,10 +154,11 @@ class BorrowingController extends Controller
                 ->withErrors(['error' => 'Hanya peminjaman yang belum dikembalikan dapat dikonfirmasi.']);
         }
 
-        // Update status menjadi 'pengembalian' dan tambahkan tanggal pengembalian
+        // Update status menjadi 'pengembalian', tambahkan tanggal pengembalian, dan denda (default ke 0 jika tidak diisi)
         $borrowing->update([
             'status' => 'pengembalian',
             'tanggal_pengembalian' => now(), // Menggunakan tanggal sekarang
+            'denda' => $request->input('denda', 0), // Gunakan nilai 0 jika tidak diisi
         ]);
 
         // Kembalikan stok buku

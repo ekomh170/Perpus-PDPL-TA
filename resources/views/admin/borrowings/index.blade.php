@@ -69,19 +69,49 @@
 
                                 <!-- Tombol Konfirmasi Pengembalian -->
                                 @if ($borrowing->status === 'peminjaman')
-                                    <form action="{{ route('admin.borrowings.return', $borrowing->id) }}" method="POST"
-                                        class="d-inline">
-                                        @csrf
-                                        @method('PATCH')
-                                        <button type="submit" class="btn btn-success btn-sm"
-                                            title="Konfirmasi Pengembalian"
-                                            onclick="return confirm('Yakin buku ini sudah dikembalikan?')">
-                                            <i class="fas fa-check-circle"></i> Dikembalikan
-                                        </button>
-                                    </form>
+                                    <button type="button" class="btn btn-success btn-sm" title="Konfirmasi Pengembalian"
+                                        data-toggle="modal" data-target="#returnModal{{ $borrowing->id }}">
+                                        <i class="fas fa-check-circle"></i> Dikembalikan
+                                    </button>
                                 @endif
                             </td>
                         </tr>
+
+                        <!-- Modal Konfirmasi Pengembalian -->
+                        <div class="modal fade" id="returnModal{{ $borrowing->id }}" tabindex="-1" role="dialog"
+                            aria-labelledby="returnModalLabel{{ $borrowing->id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="returnModalLabel{{ $borrowing->id }}">
+                                            Konfirmasi Pengembalian
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form action="{{ route('admin.borrowings.return', $borrowing->id) }}" method="POST">
+                                        @csrf
+                                        @method('PATCH')
+                                        <div class="modal-body">
+                                            <p>Apakah Anda yakin buku "<strong>{{ $borrowing->book->judul }}</strong>"
+                                                telah dikembalikan?</p>
+                                            <div class="form-group">
+                                                <label for="denda">Jumlah Denda (Opsional)</label>
+                                                <input type="number" name="denda" id="denda" step="0.01"
+                                                    min="0" class="form-control"
+                                                    placeholder="Masukkan jumlah denda jika ada">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-success">Konfirmasi</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     @empty
                         <tr>
                             <td colspan="8" class="text-center">Tidak ada data peminjaman buku.</td>
