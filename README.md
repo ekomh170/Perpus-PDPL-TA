@@ -12,7 +12,7 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengemba
 
 | **Nama**                | **Peran**         |
 |-------------------------|-------------------|
-| EKO MUCHAMAD HARYONO    | Ketua             |
+| EKO MUCHAMAD HARYONO    | Ketua  & Developer           |
 | FAJAR NURZAMAN          | Developer         |
 | DEDEN RAFI AKBAR        | Copy Writer       |
 | RAEHAN NURMISHUARI      | Developer         |
