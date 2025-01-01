@@ -2,6 +2,25 @@
 
 SIPERPUS adalah aplikasi sistem informasi perpustakaan berbasis web yang memungkinkan pengelolaan buku, anggota, peminjaman buku, dan laporan dengan antarmuka yang sederhana dan user-friendly.
 
+---
+
+## Tugas Akhir Mata Kuliah PDPL
+
+Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengembangan dan Desain Perangkat Lunak (PDPL)**. Proyek ini bertujuan untuk memahami penerapan **design pattern** dalam pengembangan perangkat lunak.
+
+### Anggota Kelompok
+
+| **Nama**                | **Peran**         |
+|-------------------------|-------------------|
+| EKO MUCHAMAD HARYONO    | Ketua             |
+| FAJAR NURZAMAN          | Developer         |
+| DEDEN RAFI AKBAR        | Copy Writer       |
+| RAEHAN NURMISHUARI      | Developer         |
+| ILYAS ABDUL AZIZ        | Developer         |
+| MUHAMMAD AFIF NAUFAL    | Copy Writer       |
+
+---
+
 ## Fitur
 
 ### **Admin**
