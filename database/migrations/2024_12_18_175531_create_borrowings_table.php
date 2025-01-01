@@ -20,7 +20,7 @@ return new class extends Migration
             $table->date('tanggal_peminjaman');
             $table->date('tanggal_pengembalian')->nullable();
             $table->enum('status', ['peminjaman', 'pengembalian'])->default('peminjaman');
-            $table->decimal('denda', 10, 2)->default(0.00);
+            $table->decimal('denda', 10, 2)->default(0.00)->nullable();
             $table->timestamps();
         });
     }

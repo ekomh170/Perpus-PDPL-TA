@@ -66,8 +66,10 @@ class MemberController extends Controller
 
     public function show($id)
     {
+
         // Menampilkan detail anggota
         $memberInstance = Member::getInstance();
+        $memberInstance = Member::All();
         $members = $memberInstance->findOrFail($id);
         return view('admin.members.show', compact('members'));
     }
