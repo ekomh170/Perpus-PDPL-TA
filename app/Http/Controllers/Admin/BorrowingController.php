@@ -4,101 +4,143 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Book;
-use Illuminate\Http\Request;
 use App\Models\Borrowing;
 use App\Models\Member;
+use Illuminate\Http\Request;
 
 class BorrowingController extends Controller
 {
     public function index()
     {
-        // Menampilkan daftar peminjaman buku
-        $borrowInstance = Borrowing::getInstance();
-        $borrowings = $borrowInstance->all();
-        $bookInstance = Book::getInstance();
-        $books = $bookInstance->all();
-        $memberInstance = Member::getInstance();
-        $members = $memberInstance->all();
+        // Mengambil data peminjaman dengan relasi member dan book
+        $borrowings = Borrowing::getInstance()->with(['member', 'book'])->get();
 
-        return view('admin.borrowings.index', compact('borrowings', 'books', 'members'));
+        return view('admin.borrowings.index', compact('borrowings'));
     }
 
     public function create()
     {
-        // Menampilkan form tambah peminjaman
-        $memberInstance = Member::getInstance();
-        $members = $memberInstance->all();
-        $bookInstance = Book::getInstance();
-        $books = $bookInstance->all();
+        // Mengambil data anggota aktif dan buku yang tersedia stoknya
+        $members = Member::getInstance()->where('status', 'active')->get();
+        $books = Book::getInstance()->where('stok', '>', 0)->get();
+
         return view('admin.borrowings.create', compact('members', 'books'));
     }
 
     public function store(Request $request)
     {
-        // Menyimpan data peminjaman buku (logika di sini)
         $request->validate([
-            'member_id' => 'required',
-            'book_id' => 'required',
+            'member_id' => 'required|exists:members,id',
+            'book_id' => 'required|exists:books,id',
             'tanggal_peminjaman' => 'required|date',
-            'tanggal_pengembalian' => 'nullable|date',
+            'tanggal_pengembalian' => 'nullable|date|after_or_equal:tanggal_peminjaman',
             'status' => 'required|in:peminjaman,pengembalian',
-            'denda' => 'nullable|numeric',
+            'denda' => 'nullable|numeric|min:0',
         ]);
 
-        $borrowInstance = Borrowing::getInstance();
-        $borrowInstance->create($request->all());
+        // Validasi stok buku
+        $book = Book::getInstance()->findOrFail($request->book_id);
+        if ($book->stok < 1) {
+            return redirect()->back()->withErrors(['book_id' => 'Stok buku tidak mencukupi.'])->withInput();
+        }
 
-        return redirect()->route('admin.borrowings.index')->with('success', 'Borrowing added successfully!');
+        // Validasi anggota meminjam buku yang sama
+        $existingBorrowing = Borrowing::getInstance()
+            ->where('member_id', $request->member_id)
+            ->where('book_id', $request->book_id)
+            ->where('status', 'peminjaman')
+            ->first();
 
+        if ($existingBorrowing) {
+            return redirect()->back()->withErrors(['book_id' => 'Anggota sudah meminjam buku ini.'])->withInput();
+        }
+
+        // Pastikan nilai default untuk denda adalah 0 jika tidak diisi
+        $data = $request->all();
+        $data['denda'] = $data['denda'] ?? 0;
+
+        // Kurangi stok buku
+        $book->decrement('stok');
+
+        // Simpan data peminjaman
+        Borrowing::getInstance()->create($data);
+
+        return redirect()->route('admin.borrowings.index')->with('success', 'Peminjaman berhasil ditambahkan!');
     }
+
 
     public function show($id)
     {
-        // Menampilkan detail peminjaman buku
-        $borrowInstance = Borrowing::getInstance();
-        $borrowing = $borrowInstance->findOrFail($id);
+        // Ambil detail peminjaman dengan relasi
+        $borrowing = Borrowing::getInstance()->with(['member', 'book'])->findOrFail($id);
 
         return view('admin.borrowings.show', compact('borrowing'));
     }
 
     public function edit($id)
     {
-        // Menampilkan form edit peminjaman
-        $borrowInstance = Borrowing::getInstance();
-        $borrowing = $borrowInstance->findOrFail($id);
-        $memberInstance = Member::getInstance();
-        $members = $memberInstance->all();
-        $bookInstance = Book::getInstance();
-        $books = $bookInstance->all();
+        // Ambil data peminjaman, anggota aktif, dan semua buku
+        $borrowing = Borrowing::getInstance()->findOrFail($id);
+        $members = Member::getInstance()->where('status', 'active')->get();
+        $books = Book::getInstance()->all();
 
-        return view('admin.borrowings.edit', compact('id'));
+        return view('admin.borrowings.edit', compact('borrowing', 'members', 'books'));
     }
 
     public function update(Request $request, $id)
     {
-        // Update data peminjaman buku (logika di sini)
         $request->validate([
-            'member_id' => 'required',
-            'book_id' => 'required',
+            'member_id' => 'required|exists:members,id',
+            'book_id' => 'required|exists:books,id',
             'tanggal_peminjaman' => 'required|date',
-            'tanggal_pengembalian' => 'nullable|date',
+            'tanggal_pengembalian' => 'nullable|date|after_or_equal:tanggal_peminjaman',
             'status' => 'required|in:peminjaman,pengembalian',
-            'denda' => 'nullable|numeric',
+            'denda' => 'nullable|numeric|min:0',
         ]);
 
-        $borrowInstance = Borrowing::getInstance();
-        $borrowInstance->findOrFail($id)->update($request->all());
+        $borrowing = Borrowing::getInstance()->findOrFail($id);
 
-        return redirect()->route('admin.borrowings.index')->with('success', 'Borrowing updated successfully!');
-        
+        // Update data peminjaman
+        $borrowing->update($request->all());
+
+        return redirect()->route('admin.borrowings.index')->with('success', 'Peminjaman berhasil diperbarui!');
     }
 
     public function destroy($id)
     {
-        // Hapus data peminjaman (logika di sini)
-        $borrowInstance = Borrowing::getInstance();
-        $borrowInstance->findOrFail($id)->delete();
+        $borrowing = Borrowing::getInstance()->findOrFail($id);
 
-        return redirect()->route('admin.borrowings.index')->with('success', 'Borrowing deleted successfully!');
+        // Jika status adalah peminjaman, kembalikan stok buku
+        if ($borrowing->status === 'peminjaman') {
+            $borrowing->book->increment('stok');
+        }
+
+        $borrowing->delete();
+
+        return redirect()->route('admin.borrowings.index')->with('success', 'Peminjaman berhasil dihapus!');
+    }
+
+    public function markAsReturned($id)
+    {
+        // Ambil data peminjaman berdasarkan ID
+        $borrowing = Borrowing::getInstance()->with('book')->findOrFail($id);
+
+        // Pastikan status saat ini adalah 'peminjaman'
+        if ($borrowing->status !== 'peminjaman') {
+            return redirect()->route('admin.borrowings.index')
+                ->withErrors(['error' => 'Hanya peminjaman yang belum dikembalikan dapat dikonfirmasi.']);
+        }
+
+        // Update status menjadi 'pengembalian' dan tambahkan tanggal pengembalian
+        $borrowing->update([
+            'status' => 'pengembalian',
+            'tanggal_pengembalian' => now(), // Menggunakan tanggal sekarang
+        ]);
+
+        // Kembalikan stok buku
+        $borrowing->book->increment('stok');
+
+        return redirect()->route('admin.borrowings.index')
+            ->with('success', 'Peminjaman telah dikonfirmasi sebagai dikembalikan.');
     }
 }

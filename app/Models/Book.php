@@ -49,8 +49,14 @@ class Book extends Model
     /**
      * Accessor (Getter): Menambahkan "Stok Tersedia: " ke jumlah stok.
      */
-    public function getStokAttribute(): string
-    {
-        return "Stok Tersedia: " . $this->attributes['stok'];
-    }
+    // public function getStokAttribute($value): string
+    // {
+    //     // Periksa apakah akses berasal dari view
+    //     if (!request()->is('admin/borrowings*')) {
+    //         return "Stok Tersedia: " . $value;
+    //     }
+
+    //     // Kembalikan nilai asli sebagai integer jika digunakan di dalam logika
+    //     return (string) $value;
+    // }
 }

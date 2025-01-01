@@ -70,6 +70,9 @@ Route::prefix('admin')
             'destroy' => 'admin.borrowings.destroy',
         ]]);
 
+        Route::patch('/admin/borrowings/{id}/return', [BorrowingController::class, 'markAsReturned'])->name('admin.borrowings.return');
+
+
         Route::get('/reports', [ReportController::class, 'index'])->name('admin.reports');
     });
 

@@ -76,14 +76,14 @@ Aplikasi ini dikembangkan sebagai bagian dari tugas akhir mata kuliah **Pengemba
 
 ## Teknologi yang Digunakan
 
-- **Framework**: Laravel 10
-- **Database**: MySQL / SQLite
+- **Framework**: Laravel 11
+- **Database**: SQLite
 - **Frontend**: AdminLTE, Bootstrap
 - **Authentication**: Laravel Breeze
 
 ---
 
-## Kontribusi
+## Kontribusi Untuk Open Source
 
 1. Fork repository ini.
 2. Buat branch untuk fitur atau perbaikan (`git checkout -b fitur-baru`).
