@@ -15,31 +15,36 @@
                     <!-- Admin Panel -->
                     <li class="nav-header">ADMIN PANEL</li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                        <a href="{{ route('admin.dashboard') }}"
+                            class="nav-link {{ Route::is('admin.dashboard') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.books.index') }}" class="nav-link">
+                        <a href="{{ route('admin.books.index') }}"
+                            class="nav-link {{ Route::is('admin.books.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-book"></i>
                             <p>Manajemen Buku</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.members.index') }}" class="nav-link">
+                        <a href="{{ route('admin.members.index') }}"
+                            class="nav-link {{ Route::is('admin.members.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>Manajemen Anggota</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.borrowings.index') }}" class="nav-link">
+                        <a href="{{ route('admin.borrowings.index') }}"
+                            class="nav-link {{ Route::is('admin.borrowings.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-book-reader"></i>
                             <p>Peminjaman Buku</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.reports') }}" class="nav-link">
+                        <a href="{{ route('admin.reports') }}"
+                            class="nav-link {{ Route::is('admin.reports') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-chart-line"></i>
                             <p>Laporan</p>
                         </a>
@@ -50,19 +55,22 @@
                     <!-- Member Panel -->
                     <li class="nav-header">MEMBER PANEL</li>
                     <li class="nav-item">
-                        <a href="{{ route('member.dashboard') }}" class="nav-link">
+                        <a href="{{ route('member.dashboard') }}"
+                            class="nav-link {{ Route::is('member.dashboard') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('member.books.index') }}" class="nav-link">
+                        <a href="{{ route('member.books.index') }}"
+                            class="nav-link {{ Route::is('member.books.*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-book"></i>
                             <p>Cari Buku</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('member.history.index') }}" class="nav-link">
+                        <a href="{{ route('member.history.index') }}"
+                            class="nav-link {{ Route::is('member.history.index') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-history"></i>
                             <p>Riwayat Peminjaman</p>
                         </a>
@@ -72,7 +80,8 @@
                 <!-- Profile and Logout -->
                 <li class="nav-header">AKUN</li>
                 <li class="nav-item">
-                    <a href="{{ route('profile.edit') }}" class="nav-link">
+                    <a href="{{ route('profile.edit') }}"
+                        class="nav-link {{ Route::is('profile.edit') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user"></i>
                         <p>Profil</p>
                     </a>
