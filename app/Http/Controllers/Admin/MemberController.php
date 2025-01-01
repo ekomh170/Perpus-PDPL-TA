@@ -10,11 +10,16 @@ class MemberController extends Controller
 {
     public function index()
     {
-        // Menampilkan daftar anggota
+        // Mengambil instance singleton dari model Member
         $memberInstance = Member::getInstance();
-        $members = $memberInstance->all();
+
+        // Mengambil semua data anggota dengan relasi user
+        $members = $memberInstance->with('user')->get();
+
+        // Mengirim data ke view
         return view('admin.members.index', compact('members'));
     }
+
 
     public function create()
     {
@@ -26,20 +31,37 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
-        // Menyimpan data anggota ke database (logika di sini)
+        // Validasi input
         $request->validate([
-            'user_id' => 'required|exists:users,id',
             'nama' => 'required|string|max:255',
-            'email' => 'required|email|unique:members,email',
+            'email' => 'required|email|unique:users,email|unique:members,email',
             'telepon' => 'nullable|string|max:20',
             'alamat' => 'nullable|string|max:255',
             'status' => 'required|in:active,inactive',
         ]);
 
-        $memberInstance = Member::getInstance();
-        $memberInstance->create($request->all());
+        // Buat akun user terlebih dahulu
+        $user = \App\Models\User::create([
+            'name' => $request->nama,
+            'email' => $request->email,
+            'password' => bcrypt('123'), // Password default
+            'role' => 'member', // Role default untuk member
+        ]);
 
-        return redirect()->route('admin.members.index')->with('success', 'Member added successfully!');
+        // Ambil instance singleton dari Member
+        $memberInstance = Member::getInstance();
+
+        // Buat data member
+        $memberInstance->create([
+            'user_id' => $user->id, // Relasi ke tabel users
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'telepon' => $request->telepon,
+            'alamat' => $request->alamat,
+            'status' => $request->status,
+        ]);
+
+        return redirect()->route('admin.members.index')->with('success', 'Member dan akun berhasil ditambahkan!');
     }
 
     public function show($id)

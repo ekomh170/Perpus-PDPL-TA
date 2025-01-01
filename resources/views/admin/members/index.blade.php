@@ -21,18 +21,18 @@
                         <th>No Telepon</th>
                         <th>Alamat</th>
                         <th>Status</th>
+                        <th>Role</th> <!-- Tambahkan kolom Role -->
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Loop Data Anggota Backend -->
                     @forelse($members as $member)
                         <tr>
-                            <td>{{ $loop->iteration }}</td> <!-- Nomor Urut -->
-                            <td>{{ $member->nama }}</td> <!-- Nama Anggota -->
-                            <td>{{ $member->email }}</td> <!-- Email Anggota -->
-                            <td>{{ $member->telepon }}</td> <!-- Nomor Telepon -->
-                            <td>{{ $member->alamat }}</td> <!-- Alamat Anggota -->
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $member->nama }}</td>
+                            <td>{{ $member->email }}</td>
+                            <td>{{ $member->telepon }}</td>
+                            <td>{{ $member->alamat }}</td>
                             <td>
                                 @if ($member->status === 'active')
                                     <span class="badge badge-success">Aktif</span>
@@ -41,17 +41,18 @@
                                 @endif
                             </td>
                             <td>
-                                <!-- Tombol Detail -->
+                                <!-- Menampilkan role dari user terkait -->
+                                {{ $member->user->role ?? 'Tidak Ada' }}
+                            </td>
+                            <td>
                                 <a href="{{ route('admin.members.show', $member->id) }}" class="btn btn-info btn-sm"
                                     title="Detail">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <!-- Tombol Edit -->
                                 <a href="{{ route('admin.members.edit', $member->id) }}" class="btn btn-warning btn-sm"
                                     title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <!-- Tombol Hapus -->
                                 <form action="{{ route('admin.members.destroy', $member->id) }}" method="POST"
                                     class="d-inline">
                                     @csrf
@@ -61,7 +62,6 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <!-- Tombol Aktif/Nonaktif -->
                                 <form action="{{ route('admin.members.toggle-status', $member->id) }}" method="POST"
                                     class="d-inline">
                                     @csrf
@@ -82,8 +82,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="7" class="text-center">Tidak ada data anggota.</td>
-                            <!-- Pesan jika data kosong -->
+                            <td colspan="8" class="text-center">Tidak ada data anggota.</td>
                         </tr>
                     @endforelse
                 </tbody>
