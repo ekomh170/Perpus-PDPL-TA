@@ -46,6 +46,7 @@ Route::prefix('admin')
             'destroy' => 'admin.books.destroy',
         ]]);
 
+
         Route::resource('/members', MemberController::class, ['names' => [
             'index'   => 'admin.members.index',
             'create'  => 'admin.members.create',
@@ -55,6 +56,9 @@ Route::prefix('admin')
             'update'  => 'admin.members.update',
             'destroy' => 'admin.members.destroy',
         ]]);
+
+        Route::patch('/admin/members/{id}/toggle-status', [MemberController::class, 'toggleStatus'])
+            ->name('admin.members.toggle-status');
 
         Route::resource('/borrowings', BorrowingController::class, ['names' => [
             'index'   => 'admin.borrowings.index',

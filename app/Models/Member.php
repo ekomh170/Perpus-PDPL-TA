@@ -28,6 +28,11 @@ class Member extends Model
         return self::$instance;
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     private function __clone()
     {
         // Mencegah kloning
