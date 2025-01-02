@@ -6,7 +6,7 @@
     <section class="features-banner">
         <div class="container py-5 text-center">
             <h1>Fitur Unggulan</h1>
-            <p class="text-muted">
+            <p class="">
                 Temukan berbagai fitur yang memudahkan akses informasi dan layanan perpustakaan kampus kami.
             </p>
         </div>

@@ -6,7 +6,7 @@
     <section class="contact-banner">
         <div class="container py-5 text-center">
             <h1>Hubungi Kami</h1>
-            <p class="text-muted">
+            <p class="">
                 Kami siap membantu Anda! Sampaikan pertanyaan, komentar, atau masukan Anda kepada kami.
             </p>
         </div>
